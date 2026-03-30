@@ -1,4 +1,4 @@
-Greetings User, from Tron
+Greetings User,
 
 # d-post
 
