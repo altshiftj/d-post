@@ -1,0 +1,54 @@
+[project]
+name = "d-post"
+version = "0.1.0"
+description = "Scientific watchdog app for automated data ingestion"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+classifiers = [
+    "Environment :: Win32 (MS Windows)",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+
+dependencies = [
+    "charset-normalizer<3.4.5",
+    "watchdog",
+    "prometheus_client",
+    "python-dotenv",
+    "requests",
+    "pywin32",
+    "pywin32-ctypes",
+    "PyYAML",
+    "flask",
+    "waitress",
+    "pluggy",
+]
+
+[project.optional-dependencies]
+ci              = ["pytest", "pyfakefs"]
+build           = ["pyinstaller"]
+dev             = ["black", "mypy", "ruff"]
+kadi            = ["kadi-apy"]
+
+# Bundled public reference plugins
+test_device     = []
+test_pc         = []
+
+[project.scripts]
+d-post = "d_post.__main__:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

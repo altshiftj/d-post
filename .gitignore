@@ -1,0 +1,35 @@
+# Virtual environments
+.venv/
+venv/
+env/
+*venv*/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+*.exe
+
+# Python caches and tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+
+# Local environment files
+.env
+.env.*
+
+# Editor files
+.vscode/
+.idea/
+.VSCodeCounter/
+
+# Logs
+watchdog.log
